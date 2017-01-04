@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<h2>List of Friends</h2>
+<table>
+  <tr *ngFor="let item of items | async">
+    <td>{{item.$value}}</td>
+    <td><button (click)="remove(item)">Delete</button></td>
+  </tr>
+</table>
+
+<h2>Add Friend</h2>
+<input [(ngModel)]="name" />
+<button (click)="add()">Add</button>
